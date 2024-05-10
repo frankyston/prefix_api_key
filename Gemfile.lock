@@ -1,0 +1,82 @@
+PATH
+  remote: .
+  specs:
+    prefix_api_key (0.1.0)
+      activesupport
+      builder
+      bundler
+      rake
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (7.1.3.2)
+      base64
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      mutex_m
+      tzinfo (~> 2.0)
+    base64 (0.2.0)
+    bigdecimal (3.1.8)
+    builder (3.2.4)
+    byebug (11.1.3)
+    coderay (1.1.3)
+    concurrent-ruby (1.2.3)
+    connection_pool (2.4.1)
+    diff-lcs (1.5.1)
+    dotenv (2.8.1)
+    drb (2.2.1)
+    factory_bot (6.4.6)
+      activesupport (>= 5.0.0)
+    i18n (1.14.5)
+      concurrent-ruby (~> 1.0)
+    macaddr (1.7.2)
+      systemu (~> 2.6.5)
+    method_source (1.1.0)
+    minitest (5.22.3)
+    mutex_m (0.2.0)
+    pry (0.14.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.10.1)
+      byebug (~> 11.0)
+      pry (>= 0.13, < 0.15)
+    rake (13.2.1)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
+    systemu (2.6.5)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    uuid (2.3.9)
+      macaddr (~> 1.0)
+
+PLATFORMS
+  arm64-darwin-23
+  ruby
+
+DEPENDENCIES
+  dotenv (~> 2.7, >= 2.7.6)
+  factory_bot (~> 6.1)
+  prefix_api_key!
+  pry-byebug (~> 3.7)
+  rake (~> 13.0)
+  rspec (~> 3.10)
+  uuid (~> 2.3, >= 2.3.9)
+
+BUNDLED WITH
+   2.5.7
