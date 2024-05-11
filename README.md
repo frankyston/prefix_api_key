@@ -2,6 +2,10 @@
 
 This gem is intended to generate and verify Prefix Api Key for ruby.
 
+## References
+https://github.com/seamapi/prefixed-api-key?tab=readme-ov-file
+https://hexdocs.pm/prefixed_api_key/readme.html
+
 ## Installation
 
 Add your Gemfile:
