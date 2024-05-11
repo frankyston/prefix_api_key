@@ -11,7 +11,7 @@ class Configuration
   end
 
   def valid?
-    raise StandardError, 'Missing configuration credentials' if @salt_short.nil? || @salt_long.nil? || @password_short.nil? || @password_long.nil?
+    raise StandardError, 'Missing configuration environment' if @salt_short.nil? || @salt_long.nil? || @password_short.nil? || @password_long.nil?
 
     true
   end

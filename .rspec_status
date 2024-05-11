@@ -1,7 +1,7 @@
 example_id                                  | status | run_time        |
 ------------------------------------------- | ------ | --------------- |
-./spec/prefix_api_key/check_spec.rb[1:1:1]  | passed | 0.00136 seconds |
-./spec/prefix_api_key/check_spec.rb[1:1:2]  | passed | 0.00005 seconds |
+./spec/prefix_api_key/check_spec.rb[1:1:1]  | passed | 0.00088 seconds |
+./spec/prefix_api_key/check_spec.rb[1:1:2]  | passed | 0.00004 seconds |
 ./spec/prefix_api_key/generate_spec.rb[1:1] | passed | 0.00004 seconds |
 ./spec/prefix_api_key/generate_spec.rb[1:2] | passed | 0.00003 seconds |
 ./spec/prefix_api_key_spec.rb[1:1]          | passed | 0.00073 seconds |
