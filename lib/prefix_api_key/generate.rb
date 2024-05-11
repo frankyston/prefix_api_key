@@ -1,5 +1,5 @@
 require 'base64'
-require 'securerandom'
+require 'digest'
 
 module PrefixApiKey
   class Generate
@@ -10,7 +10,7 @@ module PrefixApiKey
     def call(prefix: "prefix")
       short_token = Base64.strict_encode64(prefix + salt_short + password_short)[0..6]
       long_token = Base64.strict_encode64(salt_long + password_long + prefix)
-      long_token_hash = SecureRandom.hex(30)
+      long_token_hash = ::Digest::SHA2.hexdigest(long_token)
       token = "#{prefix}_#{short_token}_#{long_token}"
 
       {
