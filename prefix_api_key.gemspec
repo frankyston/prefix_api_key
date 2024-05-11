@@ -12,7 +12,8 @@ Gem::Specification.new do |spec|
   spec.description = "Generate a prefix API key for your application"
   spec.homepage = "https://github.com/frankyston/prefix_api_key"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = ">= 2.7"
+
 
   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
@@ -32,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  spec.files = Dir['lib/**/*.rb'] + Dir['bin/*']
 
   spec.add_dependency("builder")
   spec.add_dependency("bundler")
