@@ -1,34 +1,77 @@
-# PrefixApiKey
+# Prefix Api Key
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prefix_api_key`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem is intended to generate and verify Prefix Api Key for ruby.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add your Gemfile:
+```ruby
+gem 'prefix_api_key'
+```
 
-Install the gem and add to the application's Gemfile by executing:
+Execute in bash:
+```bash
+bundle install
+```
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+or install directly in bash:
+```bash
+gem install prefix_api_key
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Configure 4 environment variables in your project
+```bash
+SALT_SHORT
+SALT_LONG
+PASSWORD_SHORT
+PASSWORD_LONG
+```
+
+Configure initialize for the gem to use the 4 environment variables
+```ruby
+PrefixApiKey.configure do |config|
+	config.salt_short = ENV['SALT_SHORT']
+	config.salt_long = ENV['SALT_LONG']
+	config.password_short = ENV['PASSWORD_SHORT']
+	config.password_long = ENV['PASSWORD_LONG']
+end
+```
+
+Generating an Prefix Api Key
+```ruby
+require 'prefix_api_key'
+result = PrefixApiKey::Generate.call(prefix: 'franat')
+{
+	:short_token=>"bXktY29",
+	:long_token=>"MTIzNGFzZGYxMjM0NTZteS1jb21wYW55",
+	:long_token_hash=>"100debb3a4d86c39df892b4ebd00f86b64e16870c224f07e8393b9993b02944e",
+	:token=>"my-company_bXktY29_MTIzNGFzZGYxMjM0NTZteS1jb21wYW55",
+	:prefix=>"my-company"
+}
+```
+
+Validating a token
+```ruby
+require 'prefix_api_key'
+result = PrefixApiKey::Generate.call(prefix: 'my-company')
+token = result[:token]
+hash = result[:long_token_hash]
+
+PrefixApiKey::Check.call(token: token, hash: hash)
+# => true
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Download the project, run bundle install to install dependencies.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Now just make the changes you want.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/prefix_api_key. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/prefix_api_key/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/frankyston/prefix_api_key. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/frankyston/prefix_api_key/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -36,4 +79,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PrefixApiKey project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/prefix_api_key/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the PrefixApiKey project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/frankyston/prefix_api_key/blob/main/CODE_OF_CONDUCT.md).
