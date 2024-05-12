@@ -8,16 +8,11 @@ module PrefixApiKey
     end
 
     def call(prefix: "prefix")
-      short_token = Base64.strict_encode64(prefix + salt_short + password_short)[0..6]
-      long_token = Base64.strict_encode64(salt_long + password_long + prefix)
-      long_token_hash = ::Digest::SHA2.hexdigest(long_token)
-      token = "#{prefix}_#{short_token}_#{long_token}"
-
       {
-        short_token: short_token,
-        long_token: long_token,
-        long_token_hash: long_token_hash,
-        token: token,
+        short_token: generate_short_token(prefix),
+        long_token: generate_long_token(prefix),
+        long_token_hash: generate_long_token_hash(prefix),
+        token: generate_token(prefix),
         prefix: prefix
       }
     end
@@ -38,6 +33,22 @@ module PrefixApiKey
 
     def password_long
       PrefixApiKey.configuration.password_short
+    end
+
+    def generate_short_token(prefix)
+      Base64.strict_encode64(prefix + salt_short + password_short)[0..6]
+    end
+
+    def generate_long_token(prefix)
+      Base64.strict_encode64(salt_long + password_long + prefix)
+    end
+
+    def generate_long_token_hash(prefix)
+      ::Digest::SHA2.hexdigest(generate_long_token(prefix))
+    end
+
+    def generate_token(prefix)
+      "#{prefix}_#{generate_short_token(prefix)}_#{generate_long_token(prefix)}"
     end
   end
 end
