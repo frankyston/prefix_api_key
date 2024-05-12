@@ -15,7 +15,7 @@ module PrefixApiKey
         long_token: generate_long_token(prefix),
         long_token_hash: generate_long_token_hash(prefix),
         token: generate_token(prefix),
-        prefix:
+        prefix: prefix
       }
     end
 
