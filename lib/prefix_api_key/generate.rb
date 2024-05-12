@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 require 'base64'
 require 'digest'
 
 module PrefixApiKey
   class Generate
-    def self.call(prefix: "prefix")
-      new.call(prefix: prefix)
+    def self.call(prefix: 'prefix')
+      new.call(prefix:)
     end
 
-    def call(prefix: "prefix")
+    def call(prefix: 'prefix')
       {
         short_token: generate_short_token(prefix),
         long_token: generate_long_token(prefix),
         long_token_hash: generate_long_token_hash(prefix),
         token: generate_token(prefix),
-        prefix: prefix
+        prefix:
       }
     end
 

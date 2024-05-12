@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "prefix_api_key/version"
-require "prefix_api_key/configuration"
-require "prefix_api_key/generate"
+require_relative 'prefix_api_key/version'
+require 'prefix_api_key/configuration'
+require 'prefix_api_key/generate'
 require 'prefix_api_key/check'
 
 module PrefixApiKey
