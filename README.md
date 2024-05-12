@@ -1,3 +1,7 @@
+[![PrefixApiKey Test](https://github.com/frankyston/prefix_api_key/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/frankyston/prefix_api_key/actions/workflows/test.yml)
+[![Version](https://img.shields.io/gem/v/prefix_api_key.svg?style=flat-square)](https://rubygems.org/gems/prefix_api_key)
+[![GitHub](https://img.shields.io/github/license/frankyston/prefix_api_key?style=flat-square)](https://github.com/frankyston/prefix_api_key/blob/main/LICENSE)
+
 # Prefix Api Key
 
 This gem is intended to generate and verify Prefix Api Key for ruby.
