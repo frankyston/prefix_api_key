@@ -15,7 +15,7 @@ module PrefixApiKey
       short_token = token[1]
       long_token = token[2]
 
-      short_token_valid = short_token_valid(prefix:)
+      short_token_valid = short_token_valid(prefix: prefix)
 
       digest_hash = ::Digest::SHA2.hexdigest(long_token)
 
