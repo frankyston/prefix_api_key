@@ -6,7 +6,7 @@ require 'digest'
 module PrefixApiKey
   class Generate
     def self.call(prefix: 'prefix')
-      new.call(prefix:)
+      new.call(prefix: prefix)
     end
 
     def call(prefix: 'prefix')
