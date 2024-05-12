@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'prefix_api_key'
-require 'webmock'
 require 'pry'
 
 RSpec.configure do |config|
