@@ -1,9 +1,9 @@
-name: RuboCop
+name: PrefixApiKey Test
 
 on: [push, pull_request]
 
 jobs:
-  build:
+  rubocop:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +22,20 @@ jobs:
 
     - name: Run RuboCop
       run: bundle exec rubocop
+
+  rspec:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+
+    - name: Install dependencies
+      run: bundle install
+
+    - name: Run RSpec
+      run: bundle exec rspec
