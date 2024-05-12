@@ -50,7 +50,7 @@ end
 Generating an Prefix Api Key
 ```ruby
 require 'prefix_api_key'
-result = PrefixApiKey::Generate.call(prefix: 'franat')
+result = PrefixApiKey::Generate.call(prefix: 'my-company')
 {
 	:short_token=>"bXktY29",
 	:long_token=>"MTIzNGFzZGYxMjM0NTZteS1jb21wYW55",
