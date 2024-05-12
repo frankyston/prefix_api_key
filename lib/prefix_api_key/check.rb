@@ -6,7 +6,7 @@ require 'digest'
 module PrefixApiKey
   class Check
     def self.call(token: nil, hash: nil)
-      new.call(token:, hash:)
+      new.call(token: token, hash: hash)
     end
 
     def call(token: nil, hash: nil)
