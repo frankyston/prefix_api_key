@@ -11,11 +11,6 @@ class Configuration
   end
 
   def valid?
-    if @salt_short.nil? || @salt_long.nil? || @password_short.nil? || @password_long.nil?
-      raise StandardError,
-            'Missing configuration environment'
-    end
-
-    true
+    [salt_short, salt_long, password_short, password_long].none?(&:nil?)
   end
 end
