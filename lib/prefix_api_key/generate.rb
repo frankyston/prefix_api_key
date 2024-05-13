@@ -10,6 +10,7 @@ module PrefixApiKey
     end
 
     def call(prefix: 'prefix')
+      validate_configuration!
       {
         short_token: generate_short_token(prefix),
         long_token: generate_long_token(prefix),
@@ -51,6 +52,10 @@ module PrefixApiKey
 
     def generate_token(prefix)
       "#{prefix}_#{generate_short_token(prefix)}_#{generate_long_token(prefix)}"
+    end
+
+    def validate_configuration!
+      raise StandardError, 'Configuration is not set' unless PrefixApiKey.configuration.valid?
     end
   end
 end
