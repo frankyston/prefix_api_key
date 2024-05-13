@@ -40,10 +40,10 @@ PASSWORD_LONG
 Configure initialize for the gem to use the 4 environment variables
 ```ruby
 PrefixApiKey.configure do |config|
-	config.salt_short = ENV['SALT_SHORT']
-	config.salt_long = ENV['SALT_LONG']
-	config.password_short = ENV['PASSWORD_SHORT']
-	config.password_long = ENV['PASSWORD_LONG']
+  config.salt_short = ENV['SALT_SHORT']
+  config.salt_long = ENV['SALT_LONG']
+  config.password_short = ENV['PASSWORD_SHORT']
+  config.password_long = ENV['PASSWORD_LONG']
 end
 ```
 
@@ -52,11 +52,11 @@ Generating an Prefix Api Key
 require 'prefix_api_key'
 result = PrefixApiKey::Generate.call(prefix: 'my-company')
 {
-	:short_token=>"bXktY29",
-	:long_token=>"MTIzNGFzZGYxMjM0NTZteS1jb21wYW55",
-	:long_token_hash=>"100debb3a4d86c39df892b4ebd00f86b64e16870c224f07e8393b9993b02944e",
-	:token=>"my-company_bXktY29_MTIzNGFzZGYxMjM0NTZteS1jb21wYW55",
-	:prefix=>"my-company"
+  :short_token=>"bXktY29",
+  :long_token=>"MTIzNGFzZGYxMjM0NTZteS1jb21wYW55",
+  :long_token_hash=>"100debb3a4d86c39df892b4ebd00f86b64e16870c224f07e8393b9993b02944e",
+  :token=>"my-company_bXktY29_MTIzNGFzZGYxMjM0NTZteS1jb21wYW55",
+  :prefix=>"my-company"
 }
 ```
 
